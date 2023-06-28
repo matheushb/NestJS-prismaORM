@@ -18,6 +18,9 @@ model User {
   age         Int?
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
+
+  bookmarks Bookmark[]
+  @@map("users")
 }
 
 model Bookmark {
@@ -27,4 +30,8 @@ model Bookmark {
   link        String
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
+
+  userId Int 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("bookmarks")
 }
