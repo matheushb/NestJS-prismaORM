@@ -21,7 +21,7 @@
     "db:dev:up": "docker-compose up dev-db -d",
     "db:dev:rm": "docker-compose rm dev-db -s -f -v",
     "db:dev:deploy": "npx prisma migrate deploy",
-    "db:dev:restart": "db:dev:rm && db:dev:up && sleep 1 && db:dev:deploy"
+    "db:dev:restart": "db:dev:rm && db:dev:up && sleep 3 && db:dev:deploy"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -30,11 +30,13 @@
     "@nestjs/jwt": "^10.1.0",
     "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.0.12",
     "@prisma/client": "^4.16.1",
     "bcrypt": "^5.1.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "jsonwebtoken": "^9.0.0",
+    "pactum": "^3.4.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "prisma": "^4.16.1",
