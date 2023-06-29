@@ -11,7 +11,6 @@ import { PrismaModule } from './prisma/prisma.module';
   imports: [
     AuthModule,
     ConfigModule.forRoot({
-      envFilePath: '.env',
       isGlobal: true,
     }),
     UserModule,
